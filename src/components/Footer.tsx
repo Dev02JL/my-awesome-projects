@@ -5,7 +5,7 @@ import { UserIcon } from '@heroicons/react/16/solid'
 
 function Footer() {
   return (
-    <div className="flex justify-center gap-40 p-4 pb-8 fixed z-30 bottom-0 left-0 w-full">
+    <div className="flex justify-center p-4 pb-8 fixed z-30 bottom-0 left-0 w-full gap-10 md:gap-20 lg:gap-40">
       <HomeIcon className="foot-button"/>
       <MagnifyingGlassIcon className="foot-button"/>
       <UserIcon className="foot-button"/>

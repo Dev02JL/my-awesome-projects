@@ -10,7 +10,7 @@ function Background({ src, title }: BackgroundProps) {
     <div>
       <section className="snap-section">
           <Image
-            fill className="" 
+            fill className="object-cover" 
             src={src}
             alt="Picture of the author"
           />
