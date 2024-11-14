@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .hover-effect{
+    @apply hover:opacity-60 hover:underline ease-in-out transform duration-300
+  }
+  .icon{
+    @apply w-9 h-9
+  }
+  .hero-tab{
+    @apply hover-effect;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+  .head-button{
+    @apply hover-effect size-6 flex-shrink-0;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+  .snap-container {
+    scroll-snap-type: y mandatory; /* Snap vertical */
+    scroll-behavior: smooth;
+    overflow-y: scroll; /* Scroll vertical */
+    height: 100vh;
+  }
+  .snap-section {
+    @apply h-screen w-full relative;
+    scroll-snap-align: start;
+    height: 100vh;
+  }
+  .title-section{
+    @apply absolute text-white pt-96 pl-40
+  }
+  .foot-button{
+    @apply hover-effect w-12 h-12 bg-white rounded-full border-8 border-white;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+}
