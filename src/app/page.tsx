@@ -8,7 +8,7 @@ export default function Home() {
       <div className="text-white">
         <Header/>
         <main className="snap-container">
-          <Background src="/background.jpg" title="Cachemire + Another Test"/>
+          <Background src="/background.jpg" title="Cachemire + Test Deploy"/>
           <Background src="/hybrideground.jpg" title="Manteau Hybride"/>
           <Background src="/doudouneground.jpg" title="Doudounes"/>
         </main>
