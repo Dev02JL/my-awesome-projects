@@ -8,7 +8,7 @@ export default function Home() {
       <div className="text-white">
         <Header/>
         <main className="snap-container">
-          <Background src="/background.jpg" title="Cachemire + Git Push + Check Ansible"/>
+          <Background src="/background.jpg" title="Cachemire + Git Push + Check Ansible + 2nd Test"/>
           <Background src="/hybrideground.jpg" title="Manteau Hybride"/>
           <Background src="/doudouneground.jpg" title="Doudounes"/>
         </main>
