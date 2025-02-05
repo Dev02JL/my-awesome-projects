@@ -17,5 +17,4 @@ jobs:
         with:
           playbook: ansible-playbook/deploy.yml
           inventory: ansible-playbook/inventory.ini
-          key: ${{ secrets.ssh_rsa }}
-          remote_user: user
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
