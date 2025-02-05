@@ -41,14 +41,15 @@
         cd {{ app_dir }}
         npm install
 
-    - name: Générer le build
+    - name: Supprimer l’ancien build et recompiler
       shell: |
         cd {{ app_dir }}
+        rm -rf .next
         NODE_OPTIONS="--max_old_space_size=512" npm run build
 
-    - name: Démarrer l’application avec PM2
+    - name: Redémarrer l’application avec PM2
       shell: |
         cd {{ app_dir }}
-        pm2 restart npm --name "next-app" -- run start || pm2 start npm --name "next-app" -- run start
+        pm2 delete next-app || true
+        pm2 start npm --name "next-app" -- run start
         pm2 save
-        pm2 startup  
