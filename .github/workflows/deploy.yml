@@ -18,7 +18,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 16.171.137.13 >> ~/.ssh/known_hosts  # Remplace par ton IP
+          ssh-keyscan -H 16.171.137.13 >> ~/.ssh/known_hosts  # Remplacer par ton IP
 
       - name: Vérifier la connexion SSH
         run: ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@16.171.137.13 "echo 'Connexion SSH réussie'"
@@ -26,7 +26,9 @@ jobs:
       - name: Exécuter Ansible Playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
-          playbook: ansible-playbook/playbook.yml
-          inventory: ansible-playbook/inventory.ini
+          playbook: ansible/playbook.yml
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          inventory: |
+            [web]
+            16.171.137.13 ansible_user=ubuntu ansible_ssh_private_key_file=/Users/jlnguyen/Ansible/rsa-key.pem
           options: "-u ubuntu"
