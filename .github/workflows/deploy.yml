@@ -29,6 +29,6 @@ jobs:
           playbook: ansible/playbook.yml
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           inventory: |
-            [web]
+            [webserver]
             16.171.137.13 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa
           options: "-u ubuntu"
