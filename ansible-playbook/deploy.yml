@@ -36,11 +36,15 @@
         git pull
       when: git_repo.stat.exists
 
-    - name: Installer les dépendances et builder
+    - name: Installer les dépendances
       shell: |
         cd {{ app_dir }}
         npm install
-        npm run build
+
+    - name: Générer le build
+      shell: |
+        cd {{ app_dir }}
+        NODE_OPTIONS="--max_old_space_size=512" npm run build
 
     - name: Démarrer l’application avec PM2
       shell: |
